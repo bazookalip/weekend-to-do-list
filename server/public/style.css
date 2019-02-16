@@ -1,0 +1,47 @@
+
+body {
+    font-family: 'Inconsolata', monospace;
+    background: linear-gradient(
+      rgba(63, 8, 8, 0.603), 
+      rgba(63, 8, 8, 0.603)
+    ),
+    url("henry.jpg");
+    background-size: cover;
+    color: whitesmoke;
+    fon
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+
+}
+
+
+tr:hover {background-color: #3a0404;}
+
+input {
+    font-family: 'Inconsolata', monospace;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+button {
+    font-family: 'Inconsolata', monospace;
+     padding: 10px;
+     font-size: 1rem;
+     border-radius: 20px;
+}
+
+.parent {
+    text-align: center;
+}
+
+.child {
+    display: inline-block;
+}

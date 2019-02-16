@@ -3,29 +3,35 @@
 <head>
     <title>To Do List</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <script src="vendors/jquery.js"></script>
     <script src="client.js"></script>
    
 </head>
 <body>
-    <h1>Weekend To Do List</h1>
-    <input type="text" placeholder="Task" id="task">
-    <button id="addButton">Add Task</button>
-    
+    <div class="parent">
+        <div class="child">
+            <h1>Weekend To Do List</h1>
+            <input type="text" placeholder="New Task" id="task">
+            <button id="addButton">Add Task</button>
+            
 
-    <table>
-        <thead>
-            <tr>
-                <th>Task</th>
-                <th>Status</th>
-                <th>Delete</th>
-               
-            </tr>
-            </th>
-    
-        <tbody id="tableId">
-    
-        </tbody>
-    </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Status</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    
+                    </tr>
+                    </th>
+            
+                <tbody id="tableId">
+            
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>

@@ -10,16 +10,18 @@ function onReady(){
 
 
 function addButton(){
-    let task = $('#task').val();
+    let tasks = $('#task').val();
+    console.log(tasks);
     $.ajax({
         method: 'POST',
         url: '/tasks',
         data: {
-            task: task,
-         
+            tasks: tasks
         }
     }).then(function () {
-    }); clear();
+        getTasks();
+        clear();
+    }); 
 }
 
     
@@ -29,24 +31,22 @@ function clear(){
 
 
 function getTasks() {
-
-    $('#tableId').append(`
-                <td>take out trash</td>
-                <td><button>Completed</button><td>
-                <td><button>Delete</button><td>`)
-    // $.ajax({
-    //     method: 'GET',
-    //     url: '/tasks'
-    // }).then(function (response) {
-    //     console.log(response);
-    //     $('#tableId').empty();
-    //     response.forEach((tasks) => {
-    //         $('#tableId').append(`
-    //             <td>take out trash</td>
-               
-             
-    //     `)
-    //     });
-    //     clear();
-    // })
+ $.ajax({
+        method: 'GET',
+        url: '/tasks'
+    }).then(function (response) {
+        console.log(response);
+        $('#tableId').empty();
+        response.forEach((tasks) => {
+            $('#tableId').append(`
+                <tr>
+                    <td>${tasks.task} </td>
+                    <td>${tasks.status}</td>
+                    <td><button class="deleteButton" data-id="${tasks.id}">Update</button></td>
+                    <td><button class="deleteButton" data-id="${tasks.id}">Delete</button></td> 
+                </tr>  
+        `)
+        });
+    
+    })
 }
