@@ -5,20 +5,20 @@ body {
       rgba(63, 8, 8, 0.603), 
       rgba(63, 8, 8, 0.603)
     ),
-    url("henry.jpg");
+    url("images/henry.jpg");
     background-size: cover;
     color: whitesmoke;
-    fon
 }
+
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 700px;
 }
+
 td, th {
     text-align: left;
     padding: 8px;
     text-align: center;
-
 }
 
 
@@ -33,7 +33,7 @@ input {
 
 button {
     font-family: 'Inconsolata', monospace;
-     padding: 10px;
+     padding: 5px;
      font-size: 1rem;
      border-radius: 20px;
 }

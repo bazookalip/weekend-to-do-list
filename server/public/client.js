@@ -4,6 +4,8 @@ $(document).ready(onReady);
 function onReady(){
     console.log('jQ ready');
     $('#addButton').on('click', addButton);
+    $('#tableId').on('click', '.updateButton', updateButton)
+    $('#tableId').on('click', '.deleteButton', deleteButton)
     getTasks();
 }
 
@@ -42,11 +44,38 @@ function getTasks() {
                 <tr>
                     <td>${tasks.task} </td>
                     <td>${tasks.status}</td>
-                    <td><button class="deleteButton" data-id="${tasks.id}">Update</button></td>
+                    <td><button class="updateButton" data-id="${tasks.id}">Update</button></td>
                     <td><button class="deleteButton" data-id="${tasks.id}">Delete</button></td> 
                 </tr>  
         `)
         });
     
+    })
+}
+
+function deleteButton(){
+     $.ajax({
+        method: "DELETE",
+        url: '/tasks/' + $(this).data().id
+     }).then();
+    getTasks();
+    
+}
+
+
+
+function updateButton() {
+    console.log('update!');
+
+    console.log($(this).data().id);
+    const taskId = $(this).data().id;
+    $.ajax({
+        method: 'PUT',
+        url: '/tasks/' + taskId,
+        data: {
+            status: 'done'
+        }
+    }).then(function () {
+        getTasks();
     })
 }
