@@ -10,6 +10,11 @@ body {
     color: whitesmoke;
 }
 
+h1 {
+    font-family: 'IBM Plex Mono', monospace;
+
+}
+
 table {
     border-collapse: collapse;
     width: 700px;
@@ -19,17 +24,18 @@ td, th {
     text-align: left;
     padding: 8px;
     text-align: center;
+    color: whitesmoke;
+
 }
-
-
-tr:hover {background-color: #3a0404;}
 
 input {
     font-family: 'Inconsolata', monospace;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 10px;
     font-size: 1rem;
 }
+
+
 
 button {
     font-family: 'Inconsolata', monospace;
@@ -38,10 +44,7 @@ button {
      border-radius: 20px;
 }
 
-.parent {
-    text-align: center;
+#addButton {
+ margin: 40px;
 }
 
-.child {
-    display: inline-block;
-}

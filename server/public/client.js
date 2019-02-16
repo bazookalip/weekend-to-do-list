@@ -44,8 +44,8 @@ function getTasks() {
                 <tr>
                     <td>${tasks.task} </td>
                     <td>${tasks.status}</td>
-                    <td><button class="updateButton" data-id="${tasks.id}">Update</button></td>
-                    <td><button class="deleteButton" data-id="${tasks.id}">Delete</button></td> 
+                    <td><button class="updateButton btn btn-light btn-sm" data-id="${tasks.id}">Update</button></td>
+                    <td><button class="deleteButton btn btn-light btn-sm" data-id="${tasks.id}">Delete</button></td> 
                 </tr>  
         `)
         });

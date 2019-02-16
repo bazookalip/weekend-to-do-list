@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>To Do List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Inconsolata" rel="stylesheet">
     <script src="vendors/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="client.js"></script>
-   
-</head>
-<body>
-    <div class="parent">
-        <div class="child">
-            <h1>Weekend To Do List</h1>
-            <input type="text" placeholder="New Task" id="task">
-            <button id="addButton">Add Task</button>
-            
 
-            <table>
+</head>
+
+<body>
+    <div style="background:transparent !important" class="jumbotron jumbotron-fluid text-white text-center">
+        <div class="container">
+            <h3 class="display-1">Weekend To Do List</h1>
+        </div>
+    </div>
+    <div class="container text-center">
+        <div class="">
+            <input type="text" class="input form-control" placeholder="New Task" id="task">
+            <span class="input-group-btn">
+                <button class="btn btn-light" id="addButton">Add Task</button>
+            </span>
+            <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th>Task</th>
-                        <th>Status</th>
-                        <th>Update</th>
-                        <th>Delete</th>
-                    
+                        <th scope="col">Task</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+
                     </tr>
                     </th>
-            
+
                 <tbody id="tableId">
-            
+
                 </tbody>
             </table>
         </div>
     </div>
 </body>
+
 </html>
