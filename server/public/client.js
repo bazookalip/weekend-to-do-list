@@ -1,7 +1,7 @@
 $(document).ready(onReady);
 
 
-function onReady(){
+function onReady() {
     console.log('jQ ready');
     $('#addButton').on('click', addButton);
     $('#tableId').on('click', '.updateButton', updateButton)
@@ -11,7 +11,7 @@ function onReady(){
 
 
 
-function addButton(){
+function addButton() {
     let tasks = $('#task').val();
     console.log(tasks);
     $.ajax({
@@ -23,17 +23,17 @@ function addButton(){
     }).then(function () {
         getTasks();
         clear();
-    }); 
+    });
 }
 
-    
-function clear(){
+
+function clear() {
     $('#task').val('');
 }
 
 
 function getTasks() {
- $.ajax({
+    $.ajax({
         method: 'GET',
         url: '/tasks'
     }).then(function (response) {
@@ -44,31 +44,27 @@ function getTasks() {
                 <tr>
                     <td>${tasks.task} </td>
                     <td>${tasks.status}</td>
-                    <td><button class="updateButton btn btn-light btn-sm" data-id="${tasks.id}">Update</button></td>
-                    <td><button class="deleteButton btn btn-light btn-sm" data-id="${tasks.id}">Delete</button></td> 
+                    <td><button class="updateButton btn btn-light btn-sm" data-id="${tasks.id}"><i class="fas fa-check"></i></button></td>
+                    <td><button class="deleteButton btn btn-light btn-sm" data-id="${tasks.id}"><i class="fas fa-trash-alt"></i></button></td> 
                 </tr>  
         `)
         });
-    
+
     })
 }
 
-function deleteButton(){
-     $.ajax({
+function deleteButton() {
+    $.ajax({
         method: "DELETE",
         url: '/tasks/' + $(this).data().id
-     }).then(function() {
-         getTasks();
-     })
-       
+    }).then(function () {
+        getTasks();
+    })
+
 }
 
 
-
 function updateButton() {
-    console.log('update!');
-
-    console.log($(this).data().id);
     const taskId = $(this).data().id;
     $.ajax({
         method: 'PUT',

@@ -23,7 +23,7 @@ pool.on('error', (error) => {
 // GET
 router.get('/', (req, res) => {
     console.log('/tasks GET route was hit');
-    pool.query('SELECT * FROM "tasks"')
+    pool.query('SELECT * FROM "tasks" ORDER BY id ASC')
         .then((result) => {
             console.log(result.rows);
             res.send(result.rows);
