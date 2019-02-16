@@ -57,9 +57,10 @@ function deleteButton(){
      $.ajax({
         method: "DELETE",
         url: '/tasks/' + $(this).data().id
-     }).then();
-    getTasks();
-    
+     }).then(function() {
+         getTasks();
+     })
+       
 }
 
 
