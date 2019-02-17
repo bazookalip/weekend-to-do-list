@@ -2,8 +2,8 @@
 body {
     font-family: 'Inconsolata', monospace;
     background: linear-gradient(
-      rgba(65, 35, 40, 0.603), 
-      rgba(65, 35, 40, 0.603)
+      rgba(0, 0, 0, 0.603), 
+      rgba(0, 0, 0, 0.603)
     ),
     url("images/henry.jpg");
     background-size: cover;
