@@ -40,7 +40,17 @@ function getTasks() {
         console.log(response);
         $('#tableId').empty();
         response.forEach((tasks) => {
-            $('#tableId').append(`
+            if (tasks.status === 'done') {
+                $('#tableId').append(`
+                <tr>
+                    <td class ="completed">${tasks.task} </td>
+                    <td>${tasks.status}</td>
+                    <td><button class="updateButton btn btn-light btn-sm" data-id="${tasks.id}"><i class="fas fa-check"></i></button></td>
+                    <td><button class="deleteButton btn btn-light btn-sm" data-id="${tasks.id}"><i class="fas fa-trash-alt"></i></button></td> 
+                </tr>  
+        `)
+            } else {
+                $('#tableId').append(`
                 <tr>
                     <td>${tasks.task} </td>
                     <td>${tasks.status}</td>
@@ -48,6 +58,8 @@ function getTasks() {
                     <td><button class="deleteButton btn btn-light btn-sm" data-id="${tasks.id}"><i class="fas fa-trash-alt"></i></button></td> 
                 </tr>  
         `)
+            }
+           
         });
 
     })
@@ -76,3 +88,5 @@ function updateButton() {
         getTasks();
     })
 }
+
+

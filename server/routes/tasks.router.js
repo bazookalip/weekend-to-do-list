@@ -48,9 +48,15 @@ router.post('/', (req, res) => {
 
 // PUT
 router.put('/:id', (req, res) => {
-    console.log('/tasks PUT request was hit');
-    console.log('req.params', req.params);
+    //console.log('/tasks PUT request was hit');
+    //console.log('req.params', req.params);
+    if (req.body.status === 'done') {
+        console.log('done!')
+    } else {
+        console.log('not done!')
+    }
     pool.query(`UPDATE "tasks" SET "status"= $1 WHERE "id" = $2;`, [req.body.status, req.params.id])
+
         .then(() => {
             res.sendStatus(204);
         }).catch(error => {
