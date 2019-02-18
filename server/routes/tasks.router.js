@@ -1,24 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const pg = require('pg');
+const pool = require('../modules/pool');
 
 
-// DB CONNECTION
-const pool = pg.Pool({
-    host: 'localhost',
-    port: 5432,
-    database: 'weekend-to-do-app',
-    max: 10,
-    idleTimeoutMillis: 30000
-});
-
-pool.on('connect', () => {
-    console.log('Postgresql connected');
-});
-
-pool.on('error', (error) => {
-    console.log('Error with postgres pool', error);
-});
 
 // GET
 router.get('/', (req, res) => {
